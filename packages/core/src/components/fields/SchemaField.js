@@ -3,6 +3,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as types from "../../types";
 
+function isEmpty(value) {
+  if (value === undefined || value === null) {
+    return true;
+  }
+  if (Array.isArray(value) ) {
+    if (value.length === 0){return true;}
+    else {return false}
+  }
+  return true;
+}
+
 import {
   ADDITIONAL_PROPERTY_FLAG,
   isSelect,
@@ -360,14 +371,13 @@ function SchemaFieldRender(props) {
   return (
     <FieldTemplate {...fieldProps}>
       <React.Fragment>
-        {field}
-
+      {field}
         {/*
         If the schema `anyOf` or 'oneOf' can be rendered as a select control, don't
         render the selection and let `StringField` component handle
         rendering
       */}
-        {schema.anyOf && !isSelect(schema) && (
+        {/* { isEmpty(schema.anyOf) || !isSelect(schema) ? {field} : (
           <_AnyOfField
             disabled={disabled}
             readonly={readonly}
@@ -388,9 +398,9 @@ function SchemaFieldRender(props) {
             schema={schema}
             uiSchema={uiSchema}
           />
-        )}
+        )} */}
 
-        {schema.oneOf && !isSelect(schema) && (
+        {/* {isEmpty(schema.oneOf) || !isSelect(schema) ? {field} : (
           <_OneOfField
             disabled={disabled}
             readonly={readonly}
@@ -411,7 +421,7 @@ function SchemaFieldRender(props) {
             schema={schema}
             uiSchema={uiSchema}
           />
-        )}
+        )} */}
       </React.Fragment>
     </FieldTemplate>
   );

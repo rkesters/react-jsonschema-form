@@ -45,7 +45,7 @@
     "core-js-pure": "^3.6.5",
     "json-schema-merge-allof": "^0.6.0",
     "jsonpointer": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "nanoid": "^3.1.23",
     "prop-types": "^15.7.2",
     "react-is": "^16.9.0"
@@ -60,6 +60,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@types/lodash": "^4.14.180",
     "atob": "^2.0.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
